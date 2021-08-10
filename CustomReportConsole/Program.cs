@@ -25,17 +25,17 @@ namespace CustomReportConsole
             {
                 var services = new List<ICustomService>();
                 services.Add(new MockCustomReportService(100, 500));
-                services.Add(new MockCustomReportService(100, 1000));
-                services.Add(new MockCustomReportService(100, 5000));
-                services.Add(new MockCustomReportService(100, 5000));
-                services.Add(new MockCustomReportService(100, 10000));
+                //services.Add(new MockCustomReportService(100, 1000));
+                //services.Add(new MockCustomReportService(100, 5000));
+                //services.Add(new MockCustomReportService(100, 5000));
+                //services.Add(new MockCustomReportService(100, 10000));
                 return new CustomServiceHandler(services);
             });
             serviceCollection.AddSingleton<CustomServiceWithMaxRequestCountHandler>(c =>
             {
                 var services = new List<ICustomService>();
                 services.Add(new MockCustomReportService(10, 500));
-                services.Add(new MockCustomReportService(10, 1000));
+                services.Add(new MockCustomReportService(10, 5000));
                 services.Add(new MockCustomReportService(10, 5000));
                 services.Add(new MockCustomReportService(10, 5000));
                 services.Add(new MockCustomReportService(10, 5000));

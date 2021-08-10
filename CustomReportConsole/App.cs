@@ -42,7 +42,7 @@ namespace CustomReportConsole
         /// 執行方法
         /// </summary>
         /// <returns></returns>
-        public Task RunAsync()
+        public async Task RunAsync()
         {
             var request = new ReportRequest()
             {
@@ -61,8 +61,7 @@ namespace CustomReportConsole
                 }));
             }
 
-            Task.WaitAll(tasks.ToArray());
-            return Task.CompletedTask;
+            await Task.WhenAll(tasks.ToArray());          
         }
     }
 }
